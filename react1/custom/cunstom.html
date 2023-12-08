@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div id="root"></div>
+</body>
+<script>
+function custom(reactElement,container)
+{
+     const dom = document.createElement(reactElement.type);
+     dom.innerHTML = reactElement.children;
+    //  dom.setAttribute('href',reactElement.props.href);
+    //  dom.setAttribute('target',reactElement.props.target);
+    for(const prop in reactElement.props)
+    {
+        dom.setAttribute(prop,reactElement.props[prop]);   
+    }
+     container.appendChild(dom);
+}
+
+// react convert JSX(hTML) TO Js
+const reactElement = {
+    type: 'a',
+    props: {
+        href: 'https://google.com',
+        target: '_blank'
+    },
+    children: 'hellow google'
+}
+
+const container = document.querySelector('#root');
+custom(reactElement,container);
+
+
+</script>
+</html>
