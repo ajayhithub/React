@@ -6,15 +6,17 @@ function App() {
    const addvalue = ()=>{
     //  count = count+1;
     //  setcount(count);
-      setcount(count+1);
-     
+      if(count<30)
+      setcount(count+1);   
    }
    const revomevalue = ()=>{
+    if(count>0)
     setcount(count-1);
    }
   return (
     <>
-     <h1>chai or react</h1>
+     <h1>chai or react || count between 0 to 30</h1>
+
      <h2>counter {count}</h2>
      <button onClick={addvalue}>add value</button>
      <br/>
