@@ -34,7 +34,7 @@ const router = createBrowserRouter([
       {
         path:"github",
         element: <Github/>,
-        loader: ()=> githubinfo()   // use for api call 
+        loader: () => { return githubinfo()}   // use for api call 
       },
 
     ]    
